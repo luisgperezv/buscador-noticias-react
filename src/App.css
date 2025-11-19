@@ -1,0 +1,104 @@
+/* Estilos personalizados para la aplicación de noticias */
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.container-fluid {
+  background-color: transparent;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-img-top {
+  border-radius: 15px 15px 0 0;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-outline-primary {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  transform: translateX(5px);
+}
+
+.form-select {
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+.alert {
+  border-radius: 10px;
+  border: none;
+}
+
+.spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animación de entrada para las tarjetas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.col-md-6.col-lg-4 {
+  animation: fadeIn 0.5s ease-out;
+}
