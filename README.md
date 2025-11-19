@@ -1,173 +1,124 @@
-# 📰 Buscador de Noticias Internacionales
+# 📰 Buscador de Noticias Internacionales  
+Aplicación web desarrollada en React.js que permite consultar noticias recientes según la categoría seleccionada usando NewsAPI/GNews.
 
-Aplicación web desarrollada en React.js que permite consultar y mostrar las noticias más recientes de diferentes categorías utilizando una API pública de noticias.
+---
 
-## 📋 Descripción del Proyecto
+## 📸 Vista Principal de la Aplicación
+*(Sube tu captura al repositorio y renómbrala: `screenshot-main.png`.)*
 
-Esta aplicación permite a los usuarios seleccionar una categoría de noticias desde un menú desplegable y, al presionar un botón, consulta la API y muestra las noticias más recientes de esa categoría. Cada noticia muestra su título, fuente/autor, imagen destacada (si está disponible) y un enlace al artículo original.
+![Captura Principal](./screenshot-main.png)
 
-## 🎯 Objetivo
+---
 
-Poner en práctica el manejo de eventos y estados en React mediante el consumo de una API pública, **sin emplear el hook useEffect**. El proyecto evidencia la capacidad para controlar la interacción del usuario y representar información dinámica proveniente de fuentes externas.
+## 📋 Descripción del Proyecto  
+Este proyecto permite seleccionar una categoría de noticias y obtener resultados actualizados mediante una petición manual a una API pública.  
+El objetivo es demostrar el uso de **React + useState**, manejo de eventos y renderizado dinámico **sin usar useEffect**, como lo exige el proyecto académico.
 
-## ✨ Características
+---
 
-- ✅ Selección de categorías de noticias (Tecnología, Deportes, Salud, Entretenimiento, Ciencia, Negocios)
-- ✅ Búsqueda de noticias mediante botón (sin useEffect)
-- ✅ Visualización de noticias con:
+## 🎯 Objetivo Académico  
+- Manejo de estados con `useState`.  
+- Solicitudes a API por evento (click en botón).  
+- No se utiliza `useEffect`.  
+- Uso de Bootstrap 5 para estructura y diseño.  
+- Manejo de errores y estados de carga.  
+- Renderizado condicional de mensajes e interfaz.  
+- Manejo de imágenes con fallback cuando fallan.
+
+---
+
+## ✨ Características  
+- Menú desplegable con categorías: Tecnología, Deportes, Salud, Entretenimiento, Ciencia, Negocios.  
+- Búsqueda manual al hacer clic en **“Buscar Noticias”**.  
+- Tarjetas de noticias con:
+  - Imagen
   - Título
-  - Fuente o autor
-  - Imagen destacada
-  - Enlace al artículo original
-- ✅ Manejo de errores y mensajes informativos
-- ✅ Indicador de carga mientras se obtienen los datos
-- ✅ Diseño responsive y visualmente atractivo con Bootstrap 5
-- ✅ Uso exclusivo de `useState` para manejo de estados
+  - Fuente
+  - Descripción
+  - Enlace al artículo original  
+- Indicador visual de carga mientras se consulta la API.  
+- Mensajes cuando no hay resultados o ocurre un error.  
+- Diseño moderno, limpio y responsivo gracias a Bootstrap 5 y estilos personalizados.
 
-## 🛠️ Tecnologías Utilizadas
+---
 
-- **React.js** - Biblioteca de JavaScript para construir interfaces de usuario
-- **Bootstrap 5** - Framework CSS para diseño responsive
-- **Vite** - Herramienta de construcción y desarrollo
-- **GNews API** / **NewsAPI** - APIs públicas de noticias
+## 🛠️ Tecnologías Utilizadas  
+- **React.js**  
+- **Vite**  
+- **Bootstrap 5**  
+- **JavaScript (ES6+)**  
+- **NewsAPI / GNews**  
+- **CSS personalizado**
 
-## 📡 API Utilizada
+---
 
-La aplicación utiliza **NewsAPI** (https://newsapi.org) como fuente principal de noticias. NewsAPI proporciona acceso a noticias de más de 80,000 fuentes en todo el mundo.
+## 📡 API Utilizada  
 
-### Configuración de la API Key
+La aplicación usa **NewsAPI** (https://newsapi.org).  
 
-La aplicación está configurada con una API key de NewsAPI. Si necesitas usar tu propia API key:
+Si deseas usar tu propia API key:
 
-1. Visita [NewsAPI.org](https://newsapi.org/)
-2. Regístrate para obtener una API key gratuita (100 solicitudes por día)
-3. Crea un archivo `.env` en la raíz del proyecto:
-   ```
-   VITE_NEWS_API_KEY=tu_api_key_aqui
-   ```
+1. Crear un archivo `.env` en la raíz del proyecto.  
+2. Añadir la variable:
 
-Si no creas el archivo `.env`, la aplicación usará la API key por defecto configurada en el código.
+```env
+VITE_NEWS_API_KEY=TU_API_KEY_AQUI
 
-### Categorías Disponibles
+Si no se crea .env, la aplicación usa una API key por defecto incluida en el código para pruebas.
 
-- **Tecnología** (`technology`)
-- **Deportes** (`sports`)
-- **Salud** (`health`)
-- **Entretenimiento** (`entertainment`)
-- **Ciencia** (`science`)
-- **Negocios** (`business`)
+🚀 Cómo Ejecutar el Proyecto
+🔧 Requisitos
 
-### Nota sobre CORS
+Node.js 16 o superior
 
-NewsAPI tiene restricciones de CORS cuando se llama directamente desde el navegador. La aplicación está configurada con un proxy en Vite para evitar estos problemas durante el desarrollo. En producción, se recomienda usar un backend propio o configurar CORS adecuadamente.
-
-## 🚀 Pasos para Ejecutar la Aplicación
-
-### Prerrequisitos
-
-- Node.js (versión 16 o superior)
-- npm o yarn
-
-### Instalación
-
-1. Clona el repositorio:
-```bash
-git clone <url-del-repositorio>
-cd mi-app
-```
-
-2. Instala las dependencias:
-```bash
+npm (gestor de paquetes)
+git clone https://github.com/luisgperezv/buscador-noticias-react.git
+cd buscador-noticias-react
 npm install
-```
-
-3. Configura tu API Key (opcional):
-   - La aplicación ya está configurada con una API key de NewsAPI
-   - Si deseas usar tu propia API key, crea un archivo `.env` en la raíz:
-     ```
-     VITE_NEWS_API_KEY=tu_api_key_aqui
-     ```
-
-4. Inicia el servidor de desarrollo:
-```bash
 npm run dev
-```
 
-5. Abre tu navegador en la URL que aparece en la terminal (generalmente `http://localhost:5173`)
+El proyecto se ejecutará normalmente en:
+👉 http://localhost:5173
 
-### Scripts Disponibles
-
-- `npm run dev` - Inicia el servidor de desarrollo
-- `npm run build` - Construye la aplicación para producción
-- `npm run preview` - Previsualiza la build de producción
-- `npm run lint` - Ejecuta el linter
-
-## 📁 Estructura del Proyecto
-
-```
-mi-app/
+📁 Estructura del Proyecto
+buscador-noticias-react/
 ├── public/
-│   └── vite.svg
 ├── src/
 │   ├── assets/
-│   │   └── react.svg
-│   ├── App.jsx          # Componente principal
-│   ├── App.css          # Estilos del componente
-│   ├── index.css        # Estilos globales
-│   └── main.jsx         # Punto de entrada
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
 ├── index.html
 ├── package.json
 ├── vite.config.js
 └── README.md
-```
 
-## 🎨 Características de Diseño
+🐛 Manejo de Errores Implementado
 
-- Diseño moderno y atractivo con gradientes
-- Animaciones suaves en las tarjetas de noticias
-- Diseño completamente responsive
-- Indicadores visuales de carga
-- Manejo elegante de errores
+La aplicación contempla:
 
-## ⚙️ Requisitos Técnicos Cumplidos
+Errores de conexión con la API.
 
-- ✅ React.js con componentes funcionales
-- ✅ Uso exclusivo de `useState` para manejo de estados
-- ✅ Solicitudes a la API con `fetch()` dentro de función activada por evento
-- ✅ Bootstrap 5 para estructura y estilos
-- ✅ Sin uso de `useEffect` (requisito del proyecto)
+Respuestas sin artículos (0 noticias).
 
-## 📸 Capturas de Pantalla
+Imágenes que no cargan o vienen nulas.
 
-*Nota: Agregar capturas de pantalla o un video corto que muestre la interacción del usuario y los resultados obtenidos.*
+Datos incompletos o faltantes en la respuesta.
 
-## 🐛 Manejo de Errores
+Mensajes informativos al usuario cuando algo falla.
 
-La aplicación incluye manejo de errores para:
-- Errores de conexión con la API
-- Respuestas vacías de la API
-- Imágenes no disponibles o con errores de carga
-- Errores de red
-- Validación de datos recibidos
+👥 Autores
 
-Cuando ocurre un error, se muestra un mensaje informativo al usuario indicando el problema.
+Proyecto desarrollado por:
 
-## 📝 Notas Importantes
+Luis Pérez
+Carlos Peña
+Fabián Bedoya
+Hugo Lugo
 
-- La aplicación está configurada con una API key de NewsAPI y funciona directamente
-- Para uso en producción, se recomienda usar tu propia API key de NewsAPI (gratuita)
-- El código está diseñado para funcionar sin `useEffect` como se requiere en el proyecto
-- Las imágenes pueden no aparecer si NewsAPI no las proporciona o si hay problemas de CORS
-- El código incluye logs de depuración en la consola para diagnosticar problemas con las imágenes
+Proyecto académico del curso Programación 5 - React.
 
-## 👤 Autor
+📄 Licencia
 
-Desarrollado como proyecto académico para demostrar el manejo de eventos y estados en React.
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible para fines educativos.
-
----
-
-**Desarrollado con ❤️ usando React.js y Bootstrap 5**
+Proyecto creado para fines educativos.
