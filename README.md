@@ -4,7 +4,7 @@ Aplicación web desarrollada en React.js que permite consultar noticias reciente
 ---
 
 ## 📸 Vista Principal de la Aplicación
-*(Sube tu captura al repositorio y renómbrala: `screenshot-main.png`.)*
+
 
 ![Captura Principal](./screenshot-main.png)
 
